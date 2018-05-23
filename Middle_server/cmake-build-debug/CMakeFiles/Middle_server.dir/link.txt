@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Middle_server.dir/main.cpp.o CMakeFiles/Middle_server.dir/Msocket.cpp.o  -o Middle_server 

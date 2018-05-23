@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/meidai/Zombie_network/Middle_server/Msocket.cpp
+Msokcet.h
+/home/meidai/Zombie_network/Middle_server/Msokcet.h
+
+/home/meidai/Zombie_network/Middle_server/Msokcet.h
+sys/socket.h
+-
+iostream
+-
+sys/epoll.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+string.h
+-
+map
+-
+
+/home/meidai/Zombie_network/Middle_server/main.cpp
+iostream
+-
+Msokcet.h
+/home/meidai/Zombie_network/Middle_server/Msokcet.h
+
