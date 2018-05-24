@@ -9,6 +9,8 @@
 /home/meidai/Zombie_network/Middle_server/Msocket.cpp
 Msokcet.h
 /home/meidai/Zombie_network/Middle_server/Msokcet.h
+Protocol.h
+/home/meidai/Zombie_network/Middle_server/Protocol.h
 
 /home/meidai/Zombie_network/Middle_server/Msokcet.h
 sys/socket.h
@@ -23,6 +25,16 @@ arpa/inet.h
 -
 string.h
 -
+map
+-
+
+/home/meidai/Zombie_network/Middle_server/Protocol.cpp
+Protocol.h
+/home/meidai/Zombie_network/Middle_server/Protocol.h
+vector
+-
+
+/home/meidai/Zombie_network/Middle_server/Protocol.h
 map
 -
 

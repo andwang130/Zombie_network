@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/meidai/Zombie_network/Middle_server/Msocket.cpp" "/home/meidai/Zombie_network/Middle_server/cmake-build-debug/CMakeFiles/Middle_server.dir/Msocket.cpp.o"
+  "/home/meidai/Zombie_network/Middle_server/Protocol.cpp" "/home/meidai/Zombie_network/Middle_server/cmake-build-debug/CMakeFiles/Middle_server.dir/Protocol.cpp.o"
   "/home/meidai/Zombie_network/Middle_server/main.cpp" "/home/meidai/Zombie_network/Middle_server/cmake-build-debug/CMakeFiles/Middle_server.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

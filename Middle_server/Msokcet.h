@@ -29,6 +29,7 @@ private:
     void server_ep_ctl();
     void epoll_while(void);
     void accept_coon(void);
+    void coon_recv(int coon);
 public:
     void serever_init(char *ip,int port);
     void run();

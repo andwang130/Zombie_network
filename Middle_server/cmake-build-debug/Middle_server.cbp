@@ -92,6 +92,12 @@
 		<Unit filename="/home/meidai/Zombie_network/Middle_server/Msokcet.h">
 			<Option target="Middle_server"/>
 		</Unit>
+		<Unit filename="/home/meidai/Zombie_network/Middle_server/Protocol.cpp">
+			<Option target="Middle_server"/>
+		</Unit>
+		<Unit filename="/home/meidai/Zombie_network/Middle_server/Protocol.h">
+			<Option target="Middle_server"/>
+		</Unit>
 		<Unit filename="/home/meidai/Zombie_network/Middle_server/main.cpp">
 			<Option target="Middle_server"/>
 		</Unit>

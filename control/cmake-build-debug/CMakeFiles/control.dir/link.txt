@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/control.dir/main.cpp.o CMakeFiles/control.dir/control_socket.cpp.o CMakeFiles/control.dir/Protocol.cpp.o  -o control 

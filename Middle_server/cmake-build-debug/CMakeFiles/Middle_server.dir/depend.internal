@@ -4,6 +4,10 @@
 CMakeFiles/Middle_server.dir/Msocket.cpp.o
  /home/meidai/Zombie_network/Middle_server/Msocket.cpp
  /home/meidai/Zombie_network/Middle_server/Msokcet.h
+ /home/meidai/Zombie_network/Middle_server/Protocol.h
+CMakeFiles/Middle_server.dir/Protocol.cpp.o
+ /home/meidai/Zombie_network/Middle_server/Protocol.cpp
+ /home/meidai/Zombie_network/Middle_server/Protocol.h
 CMakeFiles/Middle_server.dir/main.cpp.o
  /home/meidai/Zombie_network/Middle_server/Msokcet.h
  /home/meidai/Zombie_network/Middle_server/main.cpp

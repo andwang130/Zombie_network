@@ -150,6 +150,33 @@ Msocket.cpp.s:
 	$(MAKE) -f CMakeFiles/Middle_server.dir/build.make CMakeFiles/Middle_server.dir/Msocket.cpp.s
 .PHONY : Msocket.cpp.s
 
+Protocol.o: Protocol.cpp.o
+
+.PHONY : Protocol.o
+
+# target to build an object file
+Protocol.cpp.o:
+	$(MAKE) -f CMakeFiles/Middle_server.dir/build.make CMakeFiles/Middle_server.dir/Protocol.cpp.o
+.PHONY : Protocol.cpp.o
+
+Protocol.i: Protocol.cpp.i
+
+.PHONY : Protocol.i
+
+# target to preprocess a source file
+Protocol.cpp.i:
+	$(MAKE) -f CMakeFiles/Middle_server.dir/build.make CMakeFiles/Middle_server.dir/Protocol.cpp.i
+.PHONY : Protocol.cpp.i
+
+Protocol.s: Protocol.cpp.s
+
+.PHONY : Protocol.s
+
+# target to generate assembly for a file
+Protocol.cpp.s:
+	$(MAKE) -f CMakeFiles/Middle_server.dir/build.make CMakeFiles/Middle_server.dir/Protocol.cpp.s
+.PHONY : Protocol.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... Msocket.o"
 	@echo "... Msocket.i"
 	@echo "... Msocket.s"
+	@echo "... Protocol.o"
+	@echo "... Protocol.i"
+	@echo "... Protocol.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

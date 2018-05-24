@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/meidai/Zombie_network/control/Protocol.cpp
+Protocol.h
+/home/meidai/Zombie_network/control/Protocol.h
+vector
+-
+
+/home/meidai/Zombie_network/control/Protocol.h
+map
+-
+
+/home/meidai/Zombie_network/control/control_socket.cpp
+control_socket.h
+/home/meidai/Zombie_network/control/control_socket.h
+string.h
+-
+
+/home/meidai/Zombie_network/control/control_socket.h
+iostream
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+
+/home/meidai/Zombie_network/control/main.cpp
+iostream
+-
+control_socket.h
+/home/meidai/Zombie_network/control/control_socket.h
+Protocol.h
+/home/meidai/Zombie_network/control/Protocol.h
+string.h
+-
+
