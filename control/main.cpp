@@ -9,7 +9,7 @@ int main() {
 
     CProtocol pr;
     map<string,string> dt;
-    dt["dsds"]="sdsd";
+    dt["url"]="cout_find";
     dt["aaaaa"]="sdsd";
     string req=pr.structure(dt);
     C_socket.socket_send((char *)req.c_str());

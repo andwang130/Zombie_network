@@ -14,15 +14,21 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <map>
+#include "requetshandel.h"
 using namespace std;
 class Csocket
 {
 private:
+    Base *base;
     int serever_socket;
     int epoll_fd;
-    map<string,int> Broiler;
+    struct info{
+        string ip;
+        int port;
+        int socket;
+    };
+    map<int,info> Broiler;
     map<string,int> Controller;
-
     struct sockaddr_in server_in ;
     void server_bin(void);
     void server_listen(void);

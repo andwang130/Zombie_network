@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Middle_server.dir/main.cpp.o"
   "CMakeFiles/Middle_server.dir/Msocket.cpp.o"
   "CMakeFiles/Middle_server.dir/Protocol.cpp.o"
+  "CMakeFiles/Middle_server.dir/requetshandel.cpp.o"
   "Middle_server.pdb"
   "Middle_server"
 )

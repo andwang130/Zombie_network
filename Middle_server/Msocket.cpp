@@ -3,9 +3,11 @@
 //
 #include "Msokcet.h"
 #include "Protocol.h"
+#include<unistd.h>
 const int LENMAX=1024;
 void Csocket::serever_init(char *ip,int port)
 {
+    base=new Base();
     server_in.sin_family=AF_INET;
     server_in.sin_port=htons(port);
     server_in.sin_addr.s_addr=inet_addr(ip);
@@ -62,7 +64,12 @@ void Csocket::accept_coon()
     event.events=EPOLLIN;
     epoll_ctl(epoll_fd,EPOLLIN,coon,&event);
     ip=inet_ntoa(coon_in.sin_addr);
-
+    int port=coon_in.sin_port;
+    info info_coon;
+    info_coon.ip=ip;
+    info_coon.port=port;
+    info_coon.socket=coon;
+    Broiler[coon]=info_coon;
     cout<<ip<<"已经链接"<<endl;
 }
 bool end_func(char *req)
@@ -115,20 +122,24 @@ void Csocket::coon_recv(int coon)
         memset(req,0, sizeof(req));
         int buf=recv(coon,req,LENMAX,0);
         text+=req;
+        cout<<"buf"<<buf<<endl;
         if(end_func(req))
         {
             cout<<"数据接收完毕"<<endl;
+            info coon_info=Broiler[coon];
+            base->Base_init(coon_info.socket,coon_info.ip,coon_info.port,text);
+            break;
+        }
+        if(buf==0||buf==-1)
+        {
+            close(coon);
+
             break;
         }
 
     }
-    CProtocol pr;
-    map<string,string> map1=pr.analysis(text);
-    map<string,string>::iterator ite;
-    for(ite=map1.begin();ite!=map1.end();ite++)
-    {
-        cout<<"back:"<<ite->first<<"end:"<<ite->second<<endl;
-    }
+
+
 
 }
 void Csocket::run()
@@ -140,6 +151,7 @@ void Csocket::run()
 }
 
 //协议体
+//url:xxxxxxxxxxxxxxxx
 /*hax:XXXXXXXXXXXXXXXXXX
   type:XXXX
 */

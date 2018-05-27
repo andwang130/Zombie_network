@@ -11,6 +11,6 @@ using namespace std;   //协议体，构造协议和解析协议
 class CProtocol
 {
 public:
-    string structure(map<string,string> str);
-    map<string,string> analysis(string);
+    static string structure(map<string,string> str);
+    static map<string,string> analysis(string);
 };
