@@ -5,12 +5,10 @@
 
 int main() {
     Csocket C_socket("127.0.0.1",8080);
-
-
     CProtocol pr;
     map<string,string> dt;
-    dt["url"]="cout_find";
-    dt["aaaaa"]="sdsd";
+    dt["url"]="to";
+    dt["to"]="127.0.0.1:29335";
     string req=pr.structure(dt);
     C_socket.socket_send((char *)req.c_str());
     cin.get();

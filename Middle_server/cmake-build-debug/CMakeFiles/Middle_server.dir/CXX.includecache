@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/wj_de/Zombie_network/Middle_server/Msocket.cpp
+/home/meidai/Zombie_network/Middle_server/Msocket.cpp
 Msokcet.h
-/home/wj_de/Zombie_network/Middle_server/Msokcet.h
+/home/meidai/Zombie_network/Middle_server/Msokcet.h
 Protocol.h
-/home/wj_de/Zombie_network/Middle_server/Protocol.h
+/home/meidai/Zombie_network/Middle_server/Protocol.h
 unistd.h
 -
 
-/home/wj_de/Zombie_network/Middle_server/Msokcet.h
+/home/meidai/Zombie_network/Middle_server/Msokcet.h
 sys/socket.h
 -
 iostream
@@ -30,31 +30,37 @@ string.h
 map
 -
 requetshandel.h
-/home/wj_de/Zombie_network/Middle_server/requetshandel.h
+/home/meidai/Zombie_network/Middle_server/requetshandel.h
 
-/home/wj_de/Zombie_network/Middle_server/Protocol.cpp
+/home/meidai/Zombie_network/Middle_server/Protocol.cpp
 Protocol.h
-/home/wj_de/Zombie_network/Middle_server/Protocol.h
+/home/meidai/Zombie_network/Middle_server/Protocol.h
 vector
 -
 
-/home/wj_de/Zombie_network/Middle_server/Protocol.h
+/home/meidai/Zombie_network/Middle_server/Protocol.h
 map
 -
 
-/home/wj_de/Zombie_network/Middle_server/main.cpp
+/home/meidai/Zombie_network/Middle_server/main.cpp
 iostream
 -
 Msokcet.h
-/home/wj_de/Zombie_network/Middle_server/Msokcet.h
+/home/meidai/Zombie_network/Middle_server/Msokcet.h
 
-/home/wj_de/Zombie_network/Middle_server/requetshandel.cpp
+/home/meidai/Zombie_network/Middle_server/requetshandel.cpp
 requetshandel.h
-/home/wj_de/Zombie_network/Middle_server/requetshandel.h
+/home/meidai/Zombie_network/Middle_server/requetshandel.h
 Protocol.h
-/home/wj_de/Zombie_network/Middle_server/Protocol.h
+/home/meidai/Zombie_network/Middle_server/Protocol.h
+sstream
+-
+sys/socket.h
+-
+string.h
+-
 
-/home/wj_de/Zombie_network/Middle_server/requetshandel.h
+/home/meidai/Zombie_network/Middle_server/requetshandel.h
 map
 -
 iostream

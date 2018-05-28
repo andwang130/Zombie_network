@@ -11,8 +11,11 @@ void Csocket::serever_init(char *ip,int port)
     server_in.sin_family=AF_INET;
     server_in.sin_port=htons(port);
     server_in.sin_addr.s_addr=inet_addr(ip);
-    epoll_fd=epoll_create(1);
+    epoll_fd=epoll_create1(EPOLL_CLOEXEC);
     serever_socket=socket(AF_INET,SOCK_STREAM,0);
+    int opt = 1;
+    events=new epoll_event[10];
+    setsockopt(serever_socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)); //socket复用
 }
 void Csocket::server_bin()
 {
@@ -33,26 +36,33 @@ void Csocket::server_ep_ctl()
     struct epoll_event event;
     event.data.fd=serever_socket;
     event.events=EPOLLIN;
-    epoll_ctl(epoll_fd,EPOLLIN,serever_socket,&event);
+    epoll_ctl(epoll_fd,EPOLL_CTL_ADD,serever_socket,&event);
 }
-void Csocket::epoll_while()
-{
-    while (true)
-    {
+void Csocket::epoll_while() {
+    while (true) {
         struct epoll_event event;
-        epoll_wait(epoll_fd,&event,1,0);
-        cout<<"发生事件"<<endl;
-        if(event.data.fd==serever_socket)
-        {
-         accept_coon();
-        }
-        else
-        {
-            coon_recv(event.data.fd);
-        }
+        int ret = epoll_wait(epoll_fd, events, 10, -1);   //epoll_waith函数，获取响应的事件，第一个参数是epoll的描述符
+        //第二个参数是用来接收epoll事件的结构体，可以是一个数组，第3个是一次接收的个数，第4个超时时间
+        cout << "发生事件" << ret << endl;
 
+        if (ret == 0) {
+            continue;
+        }
+        if (ret == -1) {
+            cout << "time out" << endl;
+        }
+        for (int i = 0; i < ret; i++) {
+            if (events[i].data.fd == serever_socket) {
+                accept_coon();
+            } else {
+                if (events[i].events == EPOLLIN) {
+                    coon_recv(events[i].data.fd);
+                }
+            }
+        }
     }
 }
+
 void Csocket::accept_coon()
 {
     string ip;
@@ -62,7 +72,7 @@ void Csocket::accept_coon()
     struct epoll_event event;
     event.data.fd=coon;
     event.events=EPOLLIN;
-    epoll_ctl(epoll_fd,EPOLLIN,coon,&event);
+    epoll_ctl(epoll_fd,EPOLL_CTL_ADD,coon,&event);
     ip=inet_ntoa(coon_in.sin_addr);
     int port=coon_in.sin_port;
     info info_coon;
@@ -70,7 +80,8 @@ void Csocket::accept_coon()
     info_coon.port=port;
     info_coon.socket=coon;
     Broiler[coon]=info_coon;
-    cout<<ip<<"已经链接"<<endl;
+    cout<<coon<<"已经链接"<<endl;
+
 }
 bool end_func(char *req)
 {
@@ -112,8 +123,52 @@ bool end_func(char *req)
     }
 
 }
+void Csocket::close_socket(int coon)
+{
+    struct epoll_event event;
+    event.data.ptr=NULL;
+    event.events=0;
+    epoll_ctl(epoll_fd,EPOLL_CTL_DEL,coon,&event);//epool注销一个监听
+    close(coon);
+
+}
+bool Csocket::hax_judge(char *req)
+{
+    int num;
+    int lent=strlen(req);
+    for(int i=0;i<16;i++)
+    {
+        if(req[i]==hax_init[i])
+        {
+            num++;
+        }
+    }
+
+    cout<<"num"<<num<<endl;
+    if(num<16)
+    {
+        return false;
+    } else
+    {
+        return true;
+    }
+
+
+}
 void Csocket::coon_recv(int coon)
 {
+    char hax[16];
+    memset(hax,0,sizeof(hax));
+    recv(coon,hax, 16,0);
+    if(!hax_judge(hax))  //测试用的hax值
+    {   cout<<strlen(hax)<<endl;
+        cout<<"验证未通过断开链接"<<"hax"<<hax<<endl;
+        close_socket(coon);
+        return;      //验证未通过断开连接
+    }
+
+
+
     cout<<"进入recv"<<endl;
     char req[LENMAX];
     string  text;
@@ -132,15 +187,11 @@ void Csocket::coon_recv(int coon)
         }
         if(buf==0||buf==-1)
         {
-            close(coon);
-
+            close_socket(coon);
             break;
         }
 
     }
-
-
-
 }
 void Csocket::run()
 {
@@ -149,9 +200,15 @@ void Csocket::run()
      server_ep_ctl();
      epoll_while();
 }
-
-//协议体
-//url:xxxxxxxxxxxxxxxx
-/*hax:XXXXXXXXXXXXXXXXXX
-  type:XXXX
-*/
+Csocket::~Csocket()
+{
+    delete events;
+    delete base;
+};
+//xxxxxxxxxxxxxxxx  //hax值。比较被服务器验证才可以链接
+//url&xxxxxxxxxxxxxxxx //这个参数决定转到函数来处理
+//to&XXXXXXXXXXXXXXXXXX
+//body&xx
+//xx&xx
+//<-suoyuzhif->   //结尾值
+//一个段是通过/n来区分的，所以其他地方不要出现/n
