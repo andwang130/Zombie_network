@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/meidai/下载/clion-2018.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/wj_de/下载/CLion-2018.1.3/clion-2018.1.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/meidai/下载/clion-2018.1/bin/cmake/bin/cmake -E remove -f
+RM = /home/wj_de/下载/CLion-2018.1.3/clion-2018.1.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/meidai/Zombie_network/controlled
+CMAKE_SOURCE_DIR = /home/wj_de/Zombie_network/controlled
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/meidai/Zombie_network/controlled/cmake-build-debug
+CMAKE_BINARY_DIR = /home/wj_de/Zombie_network/controlled/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/controlled.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/controlled.dir/flags.make
 
 CMakeFiles/controlled.dir/main.cpp.o: CMakeFiles/controlled.dir/flags.make
 CMakeFiles/controlled.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/controlled.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlled.dir/main.cpp.o -c /home/meidai/Zombie_network/controlled/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/controlled.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlled.dir/main.cpp.o -c /home/wj_de/Zombie_network/controlled/main.cpp
 
 CMakeFiles/controlled.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controlled.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meidai/Zombie_network/controlled/main.cpp > CMakeFiles/controlled.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wj_de/Zombie_network/controlled/main.cpp > CMakeFiles/controlled.dir/main.cpp.i
 
 CMakeFiles/controlled.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controlled.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meidai/Zombie_network/controlled/main.cpp -o CMakeFiles/controlled.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wj_de/Zombie_network/controlled/main.cpp -o CMakeFiles/controlled.dir/main.cpp.s
 
 CMakeFiles/controlled.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/controlled.dir/main.cpp.o.provides.build: CMakeFiles/controlled.dir/m
 
 CMakeFiles/controlled.dir/control_socket.cpp.o: CMakeFiles/controlled.dir/flags.make
 CMakeFiles/controlled.dir/control_socket.cpp.o: ../control_socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/controlled.dir/control_socket.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlled.dir/control_socket.cpp.o -c /home/meidai/Zombie_network/controlled/control_socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/controlled.dir/control_socket.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlled.dir/control_socket.cpp.o -c /home/wj_de/Zombie_network/controlled/control_socket.cpp
 
 CMakeFiles/controlled.dir/control_socket.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controlled.dir/control_socket.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meidai/Zombie_network/controlled/control_socket.cpp > CMakeFiles/controlled.dir/control_socket.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wj_de/Zombie_network/controlled/control_socket.cpp > CMakeFiles/controlled.dir/control_socket.cpp.i
 
 CMakeFiles/controlled.dir/control_socket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controlled.dir/control_socket.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meidai/Zombie_network/controlled/control_socket.cpp -o CMakeFiles/controlled.dir/control_socket.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wj_de/Zombie_network/controlled/control_socket.cpp -o CMakeFiles/controlled.dir/control_socket.cpp.s
 
 CMakeFiles/controlled.dir/control_socket.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/controlled.dir/control_socket.cpp.o.provides.build: CMakeFiles/contro
 
 CMakeFiles/controlled.dir/Protocol.cpp.o: CMakeFiles/controlled.dir/flags.make
 CMakeFiles/controlled.dir/Protocol.cpp.o: ../Protocol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/controlled.dir/Protocol.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlled.dir/Protocol.cpp.o -c /home/meidai/Zombie_network/controlled/Protocol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/controlled.dir/Protocol.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlled.dir/Protocol.cpp.o -c /home/wj_de/Zombie_network/controlled/Protocol.cpp
 
 CMakeFiles/controlled.dir/Protocol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controlled.dir/Protocol.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meidai/Zombie_network/controlled/Protocol.cpp > CMakeFiles/controlled.dir/Protocol.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wj_de/Zombie_network/controlled/Protocol.cpp > CMakeFiles/controlled.dir/Protocol.cpp.i
 
 CMakeFiles/controlled.dir/Protocol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controlled.dir/Protocol.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meidai/Zombie_network/controlled/Protocol.cpp -o CMakeFiles/controlled.dir/Protocol.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wj_de/Zombie_network/controlled/Protocol.cpp -o CMakeFiles/controlled.dir/Protocol.cpp.s
 
 CMakeFiles/controlled.dir/Protocol.cpp.o.requires:
 
@@ -129,11 +129,36 @@ CMakeFiles/controlled.dir/Protocol.cpp.o.provides: CMakeFiles/controlled.dir/Pro
 CMakeFiles/controlled.dir/Protocol.cpp.o.provides.build: CMakeFiles/controlled.dir/Protocol.cpp.o
 
 
+CMakeFiles/controlled.dir/instruct.cpp.o: CMakeFiles/controlled.dir/flags.make
+CMakeFiles/controlled.dir/instruct.cpp.o: ../instruct.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/controlled.dir/instruct.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlled.dir/instruct.cpp.o -c /home/wj_de/Zombie_network/controlled/instruct.cpp
+
+CMakeFiles/controlled.dir/instruct.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controlled.dir/instruct.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wj_de/Zombie_network/controlled/instruct.cpp > CMakeFiles/controlled.dir/instruct.cpp.i
+
+CMakeFiles/controlled.dir/instruct.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controlled.dir/instruct.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wj_de/Zombie_network/controlled/instruct.cpp -o CMakeFiles/controlled.dir/instruct.cpp.s
+
+CMakeFiles/controlled.dir/instruct.cpp.o.requires:
+
+.PHONY : CMakeFiles/controlled.dir/instruct.cpp.o.requires
+
+CMakeFiles/controlled.dir/instruct.cpp.o.provides: CMakeFiles/controlled.dir/instruct.cpp.o.requires
+	$(MAKE) -f CMakeFiles/controlled.dir/build.make CMakeFiles/controlled.dir/instruct.cpp.o.provides.build
+.PHONY : CMakeFiles/controlled.dir/instruct.cpp.o.provides
+
+CMakeFiles/controlled.dir/instruct.cpp.o.provides.build: CMakeFiles/controlled.dir/instruct.cpp.o
+
+
 # Object files for target controlled
 controlled_OBJECTS = \
 "CMakeFiles/controlled.dir/main.cpp.o" \
 "CMakeFiles/controlled.dir/control_socket.cpp.o" \
-"CMakeFiles/controlled.dir/Protocol.cpp.o"
+"CMakeFiles/controlled.dir/Protocol.cpp.o" \
+"CMakeFiles/controlled.dir/instruct.cpp.o"
 
 # External object files for target controlled
 controlled_EXTERNAL_OBJECTS =
@@ -141,9 +166,10 @@ controlled_EXTERNAL_OBJECTS =
 controlled: CMakeFiles/controlled.dir/main.cpp.o
 controlled: CMakeFiles/controlled.dir/control_socket.cpp.o
 controlled: CMakeFiles/controlled.dir/Protocol.cpp.o
+controlled: CMakeFiles/controlled.dir/instruct.cpp.o
 controlled: CMakeFiles/controlled.dir/build.make
 controlled: CMakeFiles/controlled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable controlled"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable controlled"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controlled.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +180,7 @@ CMakeFiles/controlled.dir/build: controlled
 CMakeFiles/controlled.dir/requires: CMakeFiles/controlled.dir/main.cpp.o.requires
 CMakeFiles/controlled.dir/requires: CMakeFiles/controlled.dir/control_socket.cpp.o.requires
 CMakeFiles/controlled.dir/requires: CMakeFiles/controlled.dir/Protocol.cpp.o.requires
+CMakeFiles/controlled.dir/requires: CMakeFiles/controlled.dir/instruct.cpp.o.requires
 
 .PHONY : CMakeFiles/controlled.dir/requires
 
@@ -162,6 +189,6 @@ CMakeFiles/controlled.dir/clean:
 .PHONY : CMakeFiles/controlled.dir/clean
 
 CMakeFiles/controlled.dir/depend:
-	cd /home/meidai/Zombie_network/controlled/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/meidai/Zombie_network/controlled /home/meidai/Zombie_network/controlled /home/meidai/Zombie_network/controlled/cmake-build-debug /home/meidai/Zombie_network/controlled/cmake-build-debug /home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/wj_de/Zombie_network/controlled/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wj_de/Zombie_network/controlled /home/wj_de/Zombie_network/controlled /home/wj_de/Zombie_network/controlled/cmake-build-debug /home/wj_de/Zombie_network/controlled/cmake-build-debug /home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/controlled.dir/depend
 

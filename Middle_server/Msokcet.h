@@ -15,33 +15,43 @@
 #include <string.h>
 #include <map>
 #include "requetshandel.h"
+
 using namespace std;
-class Csocket
-{
+
+class Csocket {
 private:
-     char hax_init[17]="wwwwwwwwwwwwwwww";
+    char hax_init[17] = "wwwwwwwwwwwwwwww";
     Base *base;
     int serever_socket;
     int epoll_fd;
-    struct info{
+    struct info {
         string ip;
         int port;
         int socket;
     };
     struct epoll_event *events;
-    map<int,info> Broiler;
-    map<string,int> Controller;
-    struct sockaddr_in server_in ;
+    map<int, info> Broiler;
+    map<string, int> Controller;
+    struct sockaddr_in server_in;
+
     void server_bin(void);
+
     void server_listen(void);
+
     void server_ep_ctl();
+
     void epoll_while(void);
+
     void accept_coon(void);
+
     void coon_recv(int coon);
+
     void close_socket(int coon);//关闭一个socket和取消epoll的注册
     bool hax_judge(char *req);//hax值的判断
 public:
-    void serever_init(char *ip,int port);
+    void serever_init(char *ip, int port);
+
     void run();
+
     ~Csocket();
 };

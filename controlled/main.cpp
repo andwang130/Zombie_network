@@ -10,7 +10,7 @@ int main() {
     CProtocol pr;
     map<string,string> dt;
     dt["url"]="login";
-    dt["aaaaa"]="sdsd";
+
     string req=pr.structure(dt);
     C_socket.socket_send((char *)req.c_str());
     C_socket.sokcet_recv();

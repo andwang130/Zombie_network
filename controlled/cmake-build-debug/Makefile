@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/meidai/下载/clion-2018.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/wj_de/下载/CLion-2018.1.3/clion-2018.1.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/meidai/下载/clion-2018.1/bin/cmake/bin/cmake -E remove -f
+RM = /home/wj_de/下载/CLion-2018.1.3/clion-2018.1.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/meidai/Zombie_network/controlled
+CMAKE_SOURCE_DIR = /home/wj_de/Zombie_network/controlled
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/meidai/Zombie_network/controlled/cmake-build-debug
+CMAKE_BINARY_DIR = /home/wj_de/Zombie_network/controlled/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/meidai/Zombie_network/controlled/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/meidai/下载/clion-2018.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/wj_de/下载/CLion-2018.1.3/clion-2018.1.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/meidai/下载/clion-2018.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/wj_de/下载/CLion-2018.1.3/clion-2018.1.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles /home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles /home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,6 +177,33 @@ control_socket.cpp.s:
 	$(MAKE) -f CMakeFiles/controlled.dir/build.make CMakeFiles/controlled.dir/control_socket.cpp.s
 .PHONY : control_socket.cpp.s
 
+instruct.o: instruct.cpp.o
+
+.PHONY : instruct.o
+
+# target to build an object file
+instruct.cpp.o:
+	$(MAKE) -f CMakeFiles/controlled.dir/build.make CMakeFiles/controlled.dir/instruct.cpp.o
+.PHONY : instruct.cpp.o
+
+instruct.i: instruct.cpp.i
+
+.PHONY : instruct.i
+
+# target to preprocess a source file
+instruct.cpp.i:
+	$(MAKE) -f CMakeFiles/controlled.dir/build.make CMakeFiles/controlled.dir/instruct.cpp.i
+.PHONY : instruct.cpp.i
+
+instruct.s: instruct.cpp.s
+
+.PHONY : instruct.s
+
+# target to generate assembly for a file
+instruct.cpp.s:
+	$(MAKE) -f CMakeFiles/controlled.dir/build.make CMakeFiles/controlled.dir/instruct.cpp.s
+.PHONY : instruct.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -219,6 +246,9 @@ help:
 	@echo "... control_socket.o"
 	@echo "... control_socket.i"
 	@echo "... control_socket.s"
+	@echo "... instruct.o"
+	@echo "... instruct.i"
+	@echo "... instruct.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

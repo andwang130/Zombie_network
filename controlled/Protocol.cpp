@@ -42,7 +42,7 @@ map<string,string> CProtocol::analysis(string str)
             if(*ite=='&')
             {
                 string back(vite->begin(),ite);
-                string end(ite,vite->end()-1);
+                string end(ite+1,vite->end()-1);
                 dt[back]=end;
                 break;
             }

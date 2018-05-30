@@ -4,8 +4,13 @@
 CMakeFiles/controlled.dir/Protocol.cpp.o: ../Protocol.cpp
 CMakeFiles/controlled.dir/Protocol.cpp.o: ../Protocol.h
 
+CMakeFiles/controlled.dir/control_socket.cpp.o: ../Protocol.h
 CMakeFiles/controlled.dir/control_socket.cpp.o: ../control_socket.cpp
 CMakeFiles/controlled.dir/control_socket.cpp.o: ../control_socket.h
+CMakeFiles/controlled.dir/control_socket.cpp.o: ../instruct.h
+
+CMakeFiles/controlled.dir/instruct.cpp.o: ../instruct.cpp
+CMakeFiles/controlled.dir/instruct.cpp.o: ../instruct.h
 
 CMakeFiles/controlled.dir/main.cpp.o: ../Protocol.h
 CMakeFiles/controlled.dir/main.cpp.o: ../control_socket.h

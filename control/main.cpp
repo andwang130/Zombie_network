@@ -8,7 +8,9 @@ int main() {
     CProtocol pr;
     map<string,string> dt;
     dt["url"]="to";
-    dt["to"]="127.0.0.1:29335";
+    dt["to"]="127.0.0.1:29370";
+    dt["inst_type"]="shell";
+    dt["command"]="ls";
     string req=pr.structure(dt);
     C_socket.socket_send((char *)req.c_str());
     cin.get();

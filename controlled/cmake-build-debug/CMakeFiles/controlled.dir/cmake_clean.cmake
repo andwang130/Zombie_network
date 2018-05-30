@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/controlled.dir/main.cpp.o"
   "CMakeFiles/controlled.dir/control_socket.cpp.o"
   "CMakeFiles/controlled.dir/Protocol.cpp.o"
+  "CMakeFiles/controlled.dir/instruct.cpp.o"
   "controlled.pdb"
   "controlled"
 )

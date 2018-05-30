@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/meidai/Zombie_network/controlled/Protocol.cpp" "/home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/Protocol.cpp.o"
-  "/home/meidai/Zombie_network/controlled/control_socket.cpp" "/home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/control_socket.cpp.o"
-  "/home/meidai/Zombie_network/controlled/main.cpp" "/home/meidai/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/main.cpp.o"
+  "/home/wj_de/Zombie_network/controlled/Protocol.cpp" "/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/Protocol.cpp.o"
+  "/home/wj_de/Zombie_network/controlled/control_socket.cpp" "/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/control_socket.cpp.o"
+  "/home/wj_de/Zombie_network/controlled/instruct.cpp" "/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/instruct.cpp.o"
+  "/home/wj_de/Zombie_network/controlled/main.cpp" "/home/wj_de/Zombie_network/controlled/cmake-build-debug/CMakeFiles/controlled.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -4,40 +4,41 @@
 #include "Msokcet.h"
 #include "Protocol.h"
 #include<unistd.h>
-const int LENMAX=1024;
-void Csocket::serever_init(char *ip,int port)
-{
-    base=new Base();
-    server_in.sin_family=AF_INET;
-    server_in.sin_port=htons(port);
-    server_in.sin_addr.s_addr=inet_addr(ip);
-    epoll_fd=epoll_create1(EPOLL_CLOEXEC);
-    serever_socket=socket(AF_INET,SOCK_STREAM,0);
+
+const int LENMAX = 1024;
+
+void Csocket::serever_init(char *ip, int port) {
+    base = new Base();
+    server_in.sin_family = AF_INET;
+    server_in.sin_port = htons(port);
+    server_in.sin_addr.s_addr = inet_addr(ip);
+    epoll_fd = epoll_create1(EPOLL_CLOEXEC);
+    serever_socket = socket(AF_INET, SOCK_STREAM, 0);
     int opt = 1;
-    events=new epoll_event[10];
+    events = new epoll_event[10];
     setsockopt(serever_socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)); //socket复用
 }
-void Csocket::server_bin()
-{
 
-    if(bind(serever_socket,(struct sockaddr *)&server_in, sizeof(server_in))==-1)
-    {
+void Csocket::server_bin() {
+
+    if (bind(serever_socket, (struct sockaddr *) &server_in, sizeof(server_in)) == -1) {
         cout << strerror(errno) << endl; //打印一下错误信息
 
-        cout<< "bin init fall"<<endl;
+        cout << "bin init fall" << endl;
     }
 }
-void Csocket::server_listen()
-{
-    listen(serever_socket,10);
+
+void Csocket::server_listen() {
+    listen(serever_socket, 10);
 }
-void Csocket::server_ep_ctl()
-{
+
+void Csocket::server_ep_ctl() {
     struct epoll_event event;
-    event.data.fd=serever_socket;
-    event.events=EPOLLIN;
-    epoll_ctl(epoll_fd,EPOLL_CTL_ADD,serever_socket,&event);
+    event.data.fd = serever_socket;
+    event.events = EPOLLIN;
+    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, serever_socket, &event);
 }
+
 void Csocket::epoll_while() {
     while (true) {
         struct epoll_event event;
@@ -63,145 +64,127 @@ void Csocket::epoll_while() {
     }
 }
 
-void Csocket::accept_coon()
-{
+void Csocket::accept_coon() {
     string ip;
     struct sockaddr_in coon_in;
-    socklen_t lent= sizeof(coon_in);
-    int coon=accept(serever_socket,(struct sockaddr*)&coon_in,&lent);
+    socklen_t lent = sizeof(coon_in);
+    int coon = accept(serever_socket, (struct sockaddr *) &coon_in, &lent);
     struct epoll_event event;
-    event.data.fd=coon;
-    event.events=EPOLLIN;
-    epoll_ctl(epoll_fd,EPOLL_CTL_ADD,coon,&event);
-    ip=inet_ntoa(coon_in.sin_addr);
-    int port=coon_in.sin_port;
+    event.data.fd = coon;
+    event.events = EPOLLIN;
+    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, coon, &event);
+    ip = inet_ntoa(coon_in.sin_addr);
+    int port = coon_in.sin_port;
     info info_coon;
-    info_coon.ip=ip;
-    info_coon.port=port;
-    info_coon.socket=coon;
-    Broiler[coon]=info_coon;
-    cout<<coon<<"已经链接"<<endl;
+    info_coon.ip = ip;
+    info_coon.port = port;
+    info_coon.socket = coon;
+    Broiler[coon] = info_coon;
+    cout << coon << "已经链接" << endl;
 
 }
-bool end_func(char *req)
-{
-    char *flag="<-suoyuzhif->";
-    int flag_len=strlen(flag);
-    int num=0;
-    int req_len=strlen(req);
-    for(int i=0;i<req_len;i++)
-    {
-        if(req[i]==flag[0])
-        {
-            for(int j=0;j<flag_len;j++)
-            {
-                if(req[i+j]!=flag[j])
-                {
+
+bool end_func(char *req) {
+    char *flag = "<-suoyuzhif->";
+    int flag_len = strlen(flag);
+    int num = 0;
+    int req_len = strlen(req);
+    for (int i = 0; i < req_len; i++) {
+        if (req[i] == flag[0]) {
+            for (int j = 0; j < flag_len; j++) {
+                if (req[i + j] != flag[j]) {
                     break;
-                }
-                else
-                {
+                } else {
                     num++;
                 }
             }
         }
-        if(num==flag_len)
-        {
+        if (num == flag_len) {
             return true;
         }
 
     }
-    cout<<num<<endl;
-    if(num==flag_len)
-    {
-        cout<<"sd"<<endl;
+    cout << num << endl;
+    if (num == flag_len) {
+        cout << "sd" << endl;
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 
 }
-void Csocket::close_socket(int coon)
-{
+
+void Csocket::close_socket(int coon) {
     struct epoll_event event;
-    event.data.ptr=NULL;
-    event.events=0;
-    epoll_ctl(epoll_fd,EPOLL_CTL_DEL,coon,&event);//epool注销一个监听
+    event.data.ptr = NULL;
+    event.events = 0;
+    epoll_ctl(epoll_fd, EPOLL_CTL_DEL, coon, &event);//epool注销一个监听
     close(coon);
 
 }
-bool Csocket::hax_judge(char *req)
-{
-    int num;
-    int lent=strlen(req);
-    for(int i=0;i<16;i++)
-    {
-        if(req[i]==hax_init[i])
-        {
+
+bool Csocket::hax_judge(char *req) {
+    int num=0;
+    int lent = strlen(req);
+    for (int i = 0; i < 16; i++) {
+        if (req[i] == hax_init[i]) {
             num++;
         }
     }
 
-    cout<<"num"<<num<<endl;
-    if(num<16)
-    {
+    cout << "num" << num << endl;
+    if (num < 16) {
         return false;
-    } else
-    {
+    } else {
         return true;
     }
 
 
 }
-void Csocket::coon_recv(int coon)
-{
+
+void Csocket::coon_recv(int coon) {
     char hax[16];
-    memset(hax,0,sizeof(hax));
-    recv(coon,hax, 16,0);
-    if(!hax_judge(hax))  //测试用的hax值
-    {   cout<<strlen(hax)<<endl;
-        cout<<"验证未通过断开链接"<<"hax"<<hax<<endl;
+    memset(hax, 0, sizeof(hax));
+    recv(coon, hax, 16, 0);
+    if (!hax_judge(hax))  //测试用的hax值
+    {
+        cout << strlen(hax) << endl;
+        cout << "验证未通过断开链接" << "hax" << hax << endl;
         close_socket(coon);
         return;      //验证未通过断开连接
     }
 
 
-
-    cout<<"进入recv"<<endl;
+    cout << "进入recv" << endl;
     char req[LENMAX];
-    string  text;
-    while (true)
-    {
-        memset(req,0, sizeof(req));
-        int buf=recv(coon,req,LENMAX,0);
-        text+=req;
-        cout<<"buf"<<buf<<endl;
-        if(end_func(req))
-        {
-            cout<<"数据接收完毕"<<endl;
-            info coon_info=Broiler[coon];
-            base->Base_init(coon_info.socket,coon_info.ip,coon_info.port,text);
+    string text;
+    while (true) {
+        memset(req, 0, sizeof(req));
+        int buf = recv(coon, req, LENMAX, 0);
+        text += req;
+        cout << "buf" << buf << endl;
+        if (end_func(req)) {
+            cout << "数据接收完毕" << endl;
+            info coon_info = Broiler[coon];
+            base->Base_init(coon_info.socket, coon_info.ip, coon_info.port, text);
             break;
         }
-        if(buf==0||buf==-1)
-        {
+        if (buf == 0 || buf == -1) {
             close_socket(coon);
             break;
         }
 
     }
 }
-void Csocket::run()
-{
-     server_bin();
-     server_listen();
-     server_ep_ctl();
-     epoll_while();
+
+void Csocket::run() {
+    server_bin();
+    server_listen();
+    server_ep_ctl();
+    epoll_while();
 }
-Csocket::~Csocket()
-{
+
+Csocket::~Csocket() {
     delete events;
     delete base;
 };

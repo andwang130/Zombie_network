@@ -3,4 +3,4 @@ project(controlled)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(controlled main.cpp control_socket.cpp control_socket.h Protocol.h Protocol.cpp)
+add_executable(controlled main.cpp control_socket.cpp control_socket.h Protocol.h Protocol.cpp instruct.cpp instruct.h)
