@@ -9,6 +9,7 @@ CMakeFiles/controlled.dir/control_socket.cpp.o: ../control_socket.cpp
 CMakeFiles/controlled.dir/control_socket.cpp.o: ../control_socket.h
 CMakeFiles/controlled.dir/control_socket.cpp.o: ../instruct.h
 
+CMakeFiles/controlled.dir/instruct.cpp.o: ../Protocol.h
 CMakeFiles/controlled.dir/instruct.cpp.o: ../instruct.cpp
 CMakeFiles/controlled.dir/instruct.cpp.o: ../instruct.h
 

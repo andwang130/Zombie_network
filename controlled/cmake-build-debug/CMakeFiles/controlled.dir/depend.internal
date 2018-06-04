@@ -10,6 +10,7 @@ CMakeFiles/controlled.dir/control_socket.cpp.o
  /home/wj_de/Zombie_network/controlled/control_socket.h
  /home/wj_de/Zombie_network/controlled/instruct.h
 CMakeFiles/controlled.dir/instruct.cpp.o
+ /home/wj_de/Zombie_network/controlled/Protocol.h
  /home/wj_de/Zombie_network/controlled/instruct.cpp
  /home/wj_de/Zombie_network/controlled/instruct.h
 CMakeFiles/controlled.dir/main.cpp.o

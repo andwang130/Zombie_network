@@ -21,6 +21,8 @@ control_socket.h
 /home/wj_de/Zombie_network/control/control_socket.h
 string.h
 -
+Protocol.h
+/home/wj_de/Zombie_network/control/Protocol.h
 
 /home/wj_de/Zombie_network/control/control_socket.h
 iostream

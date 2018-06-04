@@ -63,7 +63,7 @@ string  Csocket::sokcet_recv()
         cout<<req<<endl;
         if(end_func(req))
         {   cout<<"接收完毕"<<endl;
-            Cinstruct cinst;
+            Cinstruct cinst(Clinet_socket);
             CProtocol Cpro;
             map<string,string> re=Cpro.analysis(text);
             cinst.find_instruct(re);

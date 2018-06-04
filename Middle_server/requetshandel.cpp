@@ -20,14 +20,26 @@ void Base::find_url() {
     } else if (dt["url"] == "to") {
         to_Broiler();
     }
+    else if(dt["url"]=="shellreq")
+    {
+        shellreq();
+    }
 
 
 }
 
 void Base::to_Broiler() {
+
+    stringstream stream;
+    stream << coon_info.port;
+    Controller[coon_info.ip + ':' + stream.str()] = coon_info.socket;
     cout << "进入 to" << endl;
     string ip = dt["to"];
+
     int coon = Broiler[ip];
+
+    dt["Publisher"]=coon_info.ip + ':' + stream.str();
+
     string test =CProtocol::structure(dt);
     cout << "coon：" << coon << endl;
     cout<<"test"<<test<<endl;
@@ -60,4 +72,14 @@ void Base::cout_info() {
     for (ite = Broiler.begin(); ite != Broiler.end(); ite++) {
         cout << ite->first << " coon" << ite->second << endl;
     }
+}
+void Base::shellreq()
+{
+    string body=dt["body"];
+    string ip=dt["to"];
+    cout<<"打印body"<<body<<endl;
+
+    int coon=Controller[ip];
+    string req=CProtocol::structure(dt);
+    send(coon,req.c_str(),strlen(req.c_str()),0);
 }

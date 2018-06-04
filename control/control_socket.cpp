@@ -3,6 +3,7 @@
 //
 #include "control_socket.h"
 #include <string.h>
+#include "Protocol.h"
 const int LENMAX=1024;
 void Csocket::socket_init(char *ip, int port)
 {
@@ -16,17 +17,53 @@ void Csocket::socket_coont()
 {
     connect(Clinet_socket,(struct sockaddr *)&server, sizeof(server));
 }
-string  Csocket::sokcet_recv()
-{
-    char req[LENMAX];
-    string  text;
-    while (true)
-    {
-        memset(req,0, sizeof(req));
-        recv(Clinet_socket,req,LENMAX,0);
-        text+=req;
+bool end_func(char *req) {
+
+    char *flag = "<-suoyuzhif->";
+    int flag_len = strlen(flag);
+    int num = 0;
+    int req_len = strlen(req);
+    for (int i = 0; i < req_len; i++) {
+        if (req[i] == flag[0]) {
+            for (int j = 0; j < flag_len; j++) {
+                if (req[i + j] != flag[j]) {
+                    break;
+                } else {
+                    num++;
+                }
+            }
+        }
+        if (num == flag_len) {
+            return true;
+        }
+
     }
-    cout<<text<<endl;
+    cout << num << endl;
+    if (num == flag_len) {
+        cout << "sd" << endl;
+        return true;
+    } else {
+        return false;
+    }
+
+}
+string  Csocket::sokcet_recv() {
+    char req[LENMAX];
+    string text;
+    while (true) {
+        memset(req, 0, sizeof(req));
+        int buf = recv(Clinet_socket, req, LENMAX, 0);
+        text += req;
+        if (end_func(req)) {
+            cout << "接收完毕" << endl;
+            map<string, string> req = CProtocol::analysis(text);
+            cout << req["body"] << endl;
+            break;
+        }
+        if (buf == 0 || buf == -1) {
+            return text;
+        }
+    }
 }
 void Csocket::socket_send(char * req)
 {

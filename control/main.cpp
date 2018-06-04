@@ -8,11 +8,12 @@ int main() {
     CProtocol pr;
     map<string,string> dt;
     dt["url"]="to";
-    dt["to"]="127.0.0.1:29370";
+    dt["to"]="127.0.0.1:56490";
     dt["inst_type"]="shell";
     dt["command"]="ls";
     string req=pr.structure(dt);
     C_socket.socket_send((char *)req.c_str());
+    C_socket.sokcet_recv();
     cin.get();
 //    string text="aaaa:aaaaa\ndsd:sdsd\n<-suoyuzhif->";
 //    map<string,string> map1=pr.analysis(text);

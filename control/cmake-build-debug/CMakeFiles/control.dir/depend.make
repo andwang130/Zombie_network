@@ -4,6 +4,7 @@
 CMakeFiles/control.dir/Protocol.cpp.o: ../Protocol.cpp
 CMakeFiles/control.dir/Protocol.cpp.o: ../Protocol.h
 
+CMakeFiles/control.dir/control_socket.cpp.o: ../Protocol.h
 CMakeFiles/control.dir/control_socket.cpp.o: ../control_socket.cpp
 CMakeFiles/control.dir/control_socket.cpp.o: ../control_socket.h
 

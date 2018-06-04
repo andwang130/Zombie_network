@@ -41,6 +41,12 @@ arpa/inet.h
 /home/wj_de/Zombie_network/controlled/instruct.cpp
 instruct.h
 /home/wj_de/Zombie_network/controlled/instruct.h
+string.h
+-
+sys/socket.h
+-
+Protocol.h
+/home/wj_de/Zombie_network/controlled/Protocol.h
 
 /home/wj_de/Zombie_network/controlled/instruct.h
 stdio.h

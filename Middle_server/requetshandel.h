@@ -29,6 +29,8 @@ class Base {
     void cout_info();
 
     void to_Broiler();//向被控端发送信息
+    void shellreq();//控制端返回的信息
+
 public:
     void Base_init(int coon, string ip, int port, string req);  //把socket和ip端口和接受到的信息进行实例化
 };
