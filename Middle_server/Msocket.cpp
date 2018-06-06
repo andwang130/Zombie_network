@@ -58,6 +58,9 @@ void Csocket::epoll_while() {
             } else {
                 if (events[i].events == EPOLLIN) {
                     coon_recv(events[i].data.fd);
+                } else
+                {
+                    close_socket(events[i].data.fd);
                 }
             }
         }
@@ -84,36 +87,57 @@ void Csocket::accept_coon() {
 
 }
 
-bool end_func(char *req) {
+//bool end_func(char *req) {
+//    char *flag = "<-suoyuzhif->";
+//
+//    int flag_len = strlen(flag);
+//    int num = 0;
+//    int req_len = strlen(req);
+//    for (int i = 0; i < req_len; i++) {
+//        if (req[i] == flag[0]) {
+//            for (int j = 0; j < flag_len; j++) {
+//                if (req[i + j] != flag[j]) {
+//                    break;
+//                } else {
+//                    num++;
+//                }
+//            }
+//        }
+//        if (num == flag_len) {
+//            return true;
+//        }
+//
+//    }
+//    cout << num << endl;
+//    if (num == flag_len) {
+//
+//        return true;
+//    } else {
+//        cout << "sd" << endl;
+//        return false;
+//    }
+//
+//}
+//旧的结束头匹配方法
+bool end_func1(char *req) {
+    //新的匹配方法
     char *flag = "<-suoyuzhif->";
+
     int flag_len = strlen(flag);
     int num = 0;
     int req_len = strlen(req);
-    for (int i = 0; i < req_len; i++) {
-        if (req[i] == flag[0]) {
-            for (int j = 0; j < flag_len; j++) {
-                if (req[i + j] != flag[j]) {
-                    break;
-                } else {
-                    num++;
-                }
-            }
+    for(int i=req_len-flag_len;i<req_len;i++)
+    {
+        if(req[i]!=flag[num])
+        {
+            return false;
         }
-        if (num == flag_len) {
-            return true;
-        }
+        num++;
+    }
+    return true;
 
-    }
-    cout << num << endl;
-    if (num == flag_len) {
-        cout << "sd" << endl;
-        return true;
-    } else {
-        return false;
-    }
 
 }
-
 void Csocket::close_socket(int coon) {
     struct epoll_event event;
     event.data.ptr = NULL;
@@ -163,7 +187,7 @@ void Csocket::coon_recv(int coon) {
         int buf = recv(coon, req, LENMAX, 0);
         text += req;
         cout << "buf" << buf << endl;
-        if (end_func(req)) {
+        if (end_func1(req)) {
             cout << "数据接收完毕" << endl;
             info coon_info = Broiler[coon];
             base->Base_init(coon_info.socket, coon_info.ip, coon_info.port, text);

@@ -29,10 +29,11 @@ string Cinstruct::shell(const string &command,const string &ip) {
     {
 
 
-        tmp[strlen(tmp)-1]='s';
+        tmp[strlen(tmp)-1]='$';
         req+=tmp;
         memset(tmp,0,1024);
     }
+    pclose(PP);
     cout<<req<<endl;
     cout<<"*****shell操作结束******"<<endl;
     map<string,string> requst;
@@ -41,6 +42,7 @@ string Cinstruct::shell(const string &command,const string &ip) {
     requst["body"]=req;
     CProtocol pro;
     string reqson=pro.structure(requst);
+    cout<<reqson<<endl;
     send(socket,reqson.c_str(),strlen(reqson.c_str()),0);
     return req;
 }

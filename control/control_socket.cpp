@@ -18,35 +18,35 @@ void Csocket::socket_coont()
     connect(Clinet_socket,(struct sockaddr *)&server, sizeof(server));
 }
 bool end_func(char *req) {
-
+    //新的匹配方法
     char *flag = "<-suoyuzhif->";
+
     int flag_len = strlen(flag);
     int num = 0;
     int req_len = strlen(req);
-    for (int i = 0; i < req_len; i++) {
-        if (req[i] == flag[0]) {
-            for (int j = 0; j < flag_len; j++) {
-                if (req[i + j] != flag[j]) {
-                    break;
-                } else {
-                    num++;
-                }
-            }
+    for(int i=req_len-flag_len;i<req_len;i++)
+    {
+        if(req[i]!=flag[num])
+        {
+            return false;
         }
-        if (num == flag_len) {
-            return true;
-        }
+        num++;
+    }
+    return true;
 
-    }
-    cout << num << endl;
-    if (num == flag_len) {
-        cout << "sd" << endl;
-        return true;
-    } else {
-        return false;
-    }
 
 }
+void replace_str(string &str)
+{
+    for(int i=0;i<str.size();i++)
+    {
+        if(str[i]=='$')
+        {
+            str[i]='\n';
+        }
+    }
+}
+
 string  Csocket::sokcet_recv() {
     char req[LENMAX];
     string text;
@@ -57,7 +57,9 @@ string  Csocket::sokcet_recv() {
         if (end_func(req)) {
             cout << "接收完毕" << endl;
             map<string, string> req = CProtocol::analysis(text);
-            cout << req["body"] << endl;
+            string str=req["body"];
+            replace_str(str);
+            cout << str << endl;
             break;
         }
         if (buf == 0 || buf == -1) {
