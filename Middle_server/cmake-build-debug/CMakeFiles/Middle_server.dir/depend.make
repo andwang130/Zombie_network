@@ -4,16 +4,19 @@
 CMakeFiles/Middle_server.dir/Msocket.cpp.o: ../Msocket.cpp
 CMakeFiles/Middle_server.dir/Msocket.cpp.o: ../Msokcet.h
 CMakeFiles/Middle_server.dir/Msocket.cpp.o: ../Protocol.h
+CMakeFiles/Middle_server.dir/Msocket.cpp.o: ../dataclass.h
 CMakeFiles/Middle_server.dir/Msocket.cpp.o: ../requetshandel.h
 
 CMakeFiles/Middle_server.dir/Protocol.cpp.o: ../Protocol.cpp
 CMakeFiles/Middle_server.dir/Protocol.cpp.o: ../Protocol.h
 
 CMakeFiles/Middle_server.dir/main.cpp.o: ../Msokcet.h
+CMakeFiles/Middle_server.dir/main.cpp.o: ../dataclass.h
 CMakeFiles/Middle_server.dir/main.cpp.o: ../main.cpp
 CMakeFiles/Middle_server.dir/main.cpp.o: ../requetshandel.h
 
 CMakeFiles/Middle_server.dir/requetshandel.cpp.o: ../Protocol.h
+CMakeFiles/Middle_server.dir/requetshandel.cpp.o: ../dataclass.h
 CMakeFiles/Middle_server.dir/requetshandel.cpp.o: ../requetshandel.cpp
 CMakeFiles/Middle_server.dir/requetshandel.cpp.o: ../requetshandel.h
 

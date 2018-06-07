@@ -3,4 +3,4 @@ project(Middle_server)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Middle_server main.cpp Msokcet.h Msocket.cpp Protocol.cpp Protocol.h requetshandel.h requetshandel.cpp)
+add_executable(Middle_server main.cpp Msokcet.h Msocket.cpp Protocol.cpp Protocol.h requetshandel.h requetshandel.cpp dataclass.h)

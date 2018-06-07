@@ -8,14 +8,12 @@
 
 #include <map>
 #include<iostream>
-
+#include "dataclass.h"
 using namespace std;
 
 class Base {
     map<string, string> dt;
-
-    map<string, int> Broiler;
-    map<string, int> Controller;
+    Cdata *data;
     struct info {
         string ip;
         int port;

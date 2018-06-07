@@ -32,11 +32,13 @@ void Base::to_Broiler() {
 
     stringstream stream;
     stream << coon_info.port;
-    Controller[coon_info.ip + ':' + stream.str()] = coon_info.socket;
+    string key=coon_info.ip + ':' + stream.str();
+    int val=coon_info.socket;
+    data->Controller_add(key,val);
     cout << "进入 to" << endl;
     string ip = dt["to"];
 
-    int coon = Broiler[ip];
+    int coon = data->get_Broiler(ip);
 
     dt["Publisher"]=coon_info.ip + ':' + stream.str();
 
@@ -51,14 +53,14 @@ void Base::to_Broiler() {
 void Base::login() {
     stringstream stream;
     stream << coon_info.port;
-
-    Broiler[coon_info.ip + ':' + stream.str()] = coon_info.socket;
-
+    string key=coon_info.ip + ':' + stream.str();
+    int val=coon_info.socket;
+    data->Broiler_add(key,val);
     cout << "login" << "::"<<coon_info.ip + ':' + stream.str()<<"coon"<<coon_info.socket<<endl;
 }
 
 void Base::Base_init(int coon, string ip, int port, string req) {
-
+     data=Cdata::get_Cdata();
     coon_info.ip = ip;
     coon_info.socket = coon;
     coon_info.port = port;
@@ -68,18 +70,14 @@ void Base::Base_init(int coon, string ip, int port, string req) {
 }
 
 void Base::cout_info() {
-    map<string, int>::iterator ite;
-    for (ite = Broiler.begin(); ite != Broiler.end(); ite++) {
-        cout << ite->first << " coon" << ite->second << endl;
-    }
+   data->print_Broiler();
 }
 void Base::shellreq()
 {
     string body=dt["body"];
     string ip=dt["to"];
     cout<<"打印body"<<body<<endl;
-
-    int coon=Controller[ip];
+    int coon=data->get_Controller(ip);
     string req=CProtocol::structure(dt);
     send(coon,req.c_str(),strlen(req.c_str()),0);
 }
