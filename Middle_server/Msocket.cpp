@@ -8,7 +8,7 @@
 const int LENMAX = 1024;
 
 void Csocket::serever_init(char *ip, int port) {
-    base = new Base();
+    data =Cdata::get_Cdata();
     server_in.sin_family = AF_INET;
     server_in.sin_port = htons(port);
     server_in.sin_addr.s_addr = inet_addr(ip);
@@ -143,7 +143,9 @@ void Csocket::close_socket(int coon) {
     event.data.ptr = NULL;
     event.events = 0;
     epoll_ctl(epoll_fd, EPOLL_CTL_DEL, coon, &event);//epool注销一个监听
+
     close(coon);
+    data->Broiler_del(coon);
 
 }
 
@@ -190,7 +192,8 @@ void Csocket::coon_recv(int coon) {
         if (end_func1(req)) {
             cout << "数据接收完毕" << endl;
             info coon_info = Broiler[coon];
-            base->Base_init(coon_info.socket, coon_info.ip, coon_info.port, text);
+            Base base;
+            base.Base_init(coon_info.socket, coon_info.ip, coon_info.port, text);
             break;
         }
         if (buf == 0 || buf == -1) {
@@ -210,7 +213,7 @@ void Csocket::run() {
 
 Csocket::~Csocket() {
     delete events;
-    delete base;
+    delete data;
 };
 //xxxxxxxxxxxxxxxx  //hax值。比较被服务器验证才可以链接
 //url&xxxxxxxxxxxxxxxx //这个参数决定转到函数来处理

@@ -15,15 +15,14 @@
 #include <string.h>
 #include <map>
 #include "requetshandel.h"
-
 using namespace std;
 
 class Csocket {
 private:
     char hax_init[17] = "wwwwwwwwwwwwwwww";
-    Base *base;
     int serever_socket;
     int epoll_fd;
+    Cdata *data;
     struct info {
         string ip;
         int port;

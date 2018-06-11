@@ -7,9 +7,10 @@ int main() {
     Csocket C_socket("127.0.0.1",8080);
     CProtocol pr;
     map<string,string> dt;
-    dt["url"]="to";
-    dt["to"]="127.0.0.1:33937";
+    dt["url"]="cout_info";
+    dt["to"]="127.0.0.1:44678";
     dt["inst_type"]="shell";
+    dt["hax"]="hax123412312321"; //控制端必须的密码
     while (true)
     {   string str;
         cin>>str;
