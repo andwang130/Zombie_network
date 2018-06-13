@@ -6,6 +6,7 @@
 #include "instruct.h"
 #include "Protocol.h"
 #include <iostream>
+
 const int LENMAX=1024;
 void Csocket::socket_init(const char *ip, int port)
 {

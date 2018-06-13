@@ -13,9 +13,11 @@ using namespace std;
 class Cinstruct {
 private:
     string shell(const string &command,const string &ip);
+	void get_now_img(string &ip);
     SOCKET socket;
 public:
     void find_instruct(map<string,string> &inst);
+	
     Cinstruct(SOCKET sock):socket(sock)
             {
 

@@ -1,5 +1,6 @@
-﻿  control_socket.cpp
-c:\mecpp\zombie_network\win_controlled\win_controlled\control_socket.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-  main.cpp
-  正在生成代码...
-  win_controlled.vcxproj -> C:\mecpp\requests_CPP\Project1\Debug\win_controlled.exe
+﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+instruct.obj : error LNK2019: 无法解析的外部符号 "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPAX@Z)，该符号在函数 "public: __thiscall cv::Mat::~Mat(void)" (??1Mat@cv@@QAE@XZ) 中被引用
+instruct.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall cv::Mat::create(int,int const *,int)" (?create@Mat@cv@@QAEXHPBHH@Z)，该符号在函数 "public: void __thiscall cv::Mat::create(int,int,int)" (?create@Mat@cv@@QAEXHHH@Z) 中被引用
+instruct.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QAEXXZ)，该符号在函数 "public: void __thiscall cv::Mat::release(void)" (?release@Mat@cv@@QAEXXZ) 中被引用
+C:\mecpp\Zombie_network\win_controlled\win_controlled\lib\opencv_world341.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+.\Release\win_controlled.exe : fatal error LNK1120: 3 个无法解析的外部命令
