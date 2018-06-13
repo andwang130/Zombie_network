@@ -36,8 +36,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="570">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -45,8 +45,8 @@
       <file leaf-file-name="control_socket.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control_socket.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+            <state relative-caret-position="551">
+              <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
               <folding>
                 <element signature="e#39#66#0" expanded="true" />
               </folding>
@@ -117,7 +117,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,6 +128,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -181,12 +181,13 @@
       <workItem from="1527689999874" duration="3342000" />
       <workItem from="1527697092679" duration="4000" />
       <workItem from="1528122286937" duration="2926000" />
-      <workItem from="1528727012570" duration="3058000" />
+      <workItem from="1528727012570" duration="3456000" />
+      <workItem from="1528898936781" duration="840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43795000" />
+    <option name="totallyTimeSpent" value="45033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -201,14 +202,14 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81377155" visible="true" weight="0.24878575" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81220657" visible="true" weight="0.24878575" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49921876" weight="0.32868218" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.38262278" weight="0.32455215" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.3804641" weight="0.32455215" />
       <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.4991905" weight="0.32771337" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.60334593" side_tool="true" visible="true" weight="0.32665965" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.39665407" visible="true" weight="0.32665965" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.6055046" side_tool="true" visible="true" weight="0.32665965" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.39449543" visible="true" weight="0.32665965" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info id="Structure" order="1" sideWeight="0.18622848" side_tool="true" visible="true" weight="0.24878575" />
+      <window_info id="Structure" order="1" sideWeight="0.18779343" side_tool="true" visible="true" weight="0.24878575" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -567,16 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Protocol.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-          <folding>
-            <element signature="e#39#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Protocol.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -591,10 +582,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Protocol.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+          <folding>
+            <element signature="e#39#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/control_socket.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+        <state relative-caret-position="551">
+          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
           <folding>
             <element signature="e#39#66#0" expanded="true" />
           </folding>
@@ -603,8 +604,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="570">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
