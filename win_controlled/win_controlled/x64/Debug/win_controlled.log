@@ -1,6 +1,5 @@
 ﻿D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
   instruct.cpp
 c:\mecpp\zombie_network\win_controlled\win_controlled\instruct.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-c:\mecpp\zombie_network\win_controlled\win_controlled\instruct.cpp(70): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-instruct.obj : error LNK2019: 无法解析的外部符号 "void __cdecl cv::imshow(class cv::String const &,class cv::debug_build_guard::_InputArray const &)" (?imshow@cv@@YAXAEBVString@1@AEBV_InputArray@debug_build_guard@1@@Z)，该符号在函数 "private: void __cdecl Cinstruct::get_now_img(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)" (?get_now_img@Cinstruct@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 中被引用
-.\Release\win_controlled.exe : fatal error LNK1120: 1 个无法解析的外部命令
+c:\mecpp\zombie_network\win_controlled\win_controlled\instruct.cpp(54): error C3861: “imshow”: 找不到标识符
+c:\mecpp\zombie_network\win_controlled\win_controlled\instruct.cpp(69): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据

